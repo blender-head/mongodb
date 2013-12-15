@@ -1,1 +1,2 @@
-A MongoDB basic tutorial from Tuts+
+- A MongoDB basic tutorial from Tuts+
+- Notes collected O'reilly's MongoDB The Definitive Guide book

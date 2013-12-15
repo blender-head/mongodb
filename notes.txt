@@ -1,3 +1,7 @@
+0. Start the MongoDB server:
+
+	mongod
+
 1. Access the mongodb server using 'mongo' command
 
 2. Show databases:
