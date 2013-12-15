@@ -1,0 +1,36 @@
+1. Access the mongodb server using 'mongo' command
+
+2. Show databases:
+
+	> show dbs
+
+3. Use a database:
+
+	> use db_name
+
+4. Create a database:
+
+	> use new_db_name
+	e.g
+	> use bookmarks
+
+5. Create a collection:
+
+	> db.collection_name
+	e.g
+	> db.links
+
+6. Create document:
+
+	> db.collection_name.insert();
+	e.g
+	> db.links.insert({ title: 'Tut+ Premium', url: 'http://www.tutsplus.com', comment: 'this is comment', tags: ['tag1','tag2'], saved_on: new Date() });
+
+7. Show all document in a collection:
+
+	> db.col_name.find()
+	e.g
+	> db.links.find()
+
+	formatted version:
+	> db.links.find().forEach(printjson)
