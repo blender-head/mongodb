@@ -1,0 +1,1 @@
+A MongoDB basic tutorial from Tuts+
