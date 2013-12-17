@@ -2,7 +2,9 @@
 
 	mongod
 
-1. Access the mongodb server using 'mongo' command
+1. Access the mongodb server using 'mongo' command:
+
+	mongo
 
 2. Show databases:
 
@@ -38,3 +40,7 @@
 
 	formatted version:
 	> db.links.find().forEach(printjson)
+
+8. Specify document id manually:
+
+	> db.links.insert({ _id: 1, title: 'Tut+ Premium', url: 'http://www.tutsplus.com', comment: 'this is comment', tags: ['tag1','tag2'], saved_on: new Date() });
