@@ -1,0 +1,75 @@
+- Getting Started:
+
+	- Document: 
+		the basic unit of data for MongoDB, roughly equivalent to a row in a relational database management system (but much more expressive)
+	
+	- Collection:
+		group of documents. If a document is the MongoDB analog of a row in a relational database, then a collection can be thought of as the analog to a table
+
+	- Databases:
+		group of collections
+
+	- Installing MongoDB:
+		- download MongoDB: 
+			'http://www.mongodb.org/downloads'
+		
+		- extract to a location: 
+			e.g 'D:\Software\MongoDB'
+		
+		- create MongoDB data directory: 
+			'C:\data\db'
+		
+		- start MongoDB server: 
+			'D:\Software\MongoDB\mongodb\bin\mongod.exe --dbpath=c:\data\db'
+		
+		- MongoDB web server: 
+			'http://localhost:28017/'
+
+	- MongoDB Shell:
+		- start the shell: 
+			'mongo'
+		
+		- choose a database: 
+			> use db_name
+			e.g: 
+			> use test_db
+
+			if the database don't already exist, it will automatically created
+
+		- see the current chosen database:
+			> db
+
+			'db' is a variable that has the value of the current used database
+
+		- CRUD:
+
+			- create:
+
+				> post = {"title" : "My Blog Post", "content" : "Here's my blog post.", "date" : new Date()}
+				> db.blog.insert(post) -> 'blog' is a collection. if there's no collection named 'blog' before, then MongoDB will automatically create it for you
+				> db.blog.find() -> return all data form a collection
+
+			- read:
+
+				> db.blog.findOne() -> return just one document
+
+			- update:
+
+				> post.comments = [] -> add a 'comment' array to post document
+				> db.blog.update({title : "My Blog Post"}, post) -> search a collection titled 'My Blog Post', and add 'comment' array to it
+				> db.blog.find()
+					{
+						"_id" : ObjectId("4b23c3ca7525f35f94b60a2d"),
+						"title" : "My Blog Post",
+						"content" : "Here's my blog post.",
+						"date" : "Sat Dec 12 2009 11:23:21 GMT-0500 (EST)"
+						"comments" : [ ]
+					}
+
+			- delete:
+
+				- db.blog.remove() -> remove all document
+				- db.blog.remove({title : "My Blog Post"}) -> remove a document titled 'My Blog Post'
+
+		- help:
+			> help
